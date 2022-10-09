@@ -1,17 +1,20 @@
 @page "/main"
 
 <PageTitle>Main</PageTitle>
-
-<div class="map-wrapper">
-    <Map @ref="mapRef" MapOptions="@mapOptions"></Map>
-</div>
-<div class="panel">
-    My pins
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-10 map-wrapper" style="padding:0">
+            <Map @ref="mapRef" MapOptions="@mapOptions"></Map>
+        </div>
+        <div class="panel col-sm-2">
+            My pins
+        </div>
+    </div>
 </div>
 
 <style>
-    #mapId {
-        height: 400px;
+    .map-wrapper, #mapId {
+        height: 100vh;
     }
 
 </style>
