@@ -1,3 +1,4 @@
+using FisSst.BlazorMaps.DependencyInjection;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
@@ -12,6 +13,8 @@ namespace WebApp
             // Add services to the container.
             builder.Services.AddRazorPages();
             builder.Services.AddServerSideBlazor();
+
+            builder.Services.AddBlazorLeafletMaps(); // Blazor leaflet map line
 
             var app = builder.Build();
 

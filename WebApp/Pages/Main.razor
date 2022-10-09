@@ -2,10 +2,28 @@
 
 <PageTitle>Main</PageTitle>
 
-<h1>Map</h1>
+<Map @ref="mapRef" MapOptions="@mapOptions"></Map>
 
-<div id="map"></div>
+<style>
+    #mapId {
+        height: 400px;
+    }
+</style>
 
 @code {
-    //lol
+    private Map mapRef;
+    private MapOptions mapOptions = new MapOptions()
+        {
+            DivId = "mapId",
+            Center = new LatLng(50.279133, 18.685578),
+            Zoom = 12, //13
+            UrlTileLayer = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            SubOptions = new MapSubOptions()
+            {
+                Attribution = "&copy; <a lhref='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
+                TileSize = 512,
+                ZoomOffset = -1,//-1
+                MaxZoom = 12,
+            }
+        };
 }
