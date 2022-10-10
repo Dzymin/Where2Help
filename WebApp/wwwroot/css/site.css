@@ -4,6 +4,10 @@ html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+body {
+    height: calc( 100vh - 56px );
+}
+
 h1:focus {
     outline: none;
 }
