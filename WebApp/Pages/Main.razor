@@ -12,15 +12,16 @@
     </div>
 </div>
 
+<!--Dzia³a nie dotykaæ-->
 <style>
     .map-wrapper, #mapId {
         height: 100vh;
     }
-
 </style>
+<!--Koniec-->
 
 @code {
-    private Map mapRef;
+    private Map? mapRef;
     private MapOptions mapOptions = new MapOptions()
         {
             DivId = "mapId",
