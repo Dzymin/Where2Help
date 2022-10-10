@@ -1,0 +1,20 @@
+﻿body {
+}
+
+#map-panel {
+    height: 30vh;
+    min-height:10rem;
+    width: 100%;
+}
+
+.map-wrapper {
+    min-height: 20rem;
+    height: 70vh;
+    width: 100%;
+    padding: 1rem;
+}
+
+.main-content {
+    padding: 0;
+    background: #ffffff;
+}

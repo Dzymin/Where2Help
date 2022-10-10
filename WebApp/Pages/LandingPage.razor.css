@@ -1,6 +1,3 @@
-html, body, .container-fluid, .row {
-    height:100%;
-}
 .col-sm-4 {
     border: 1px solid black;
     min-height: 100vh;
@@ -14,10 +11,6 @@ html, body, .container-fluid, .row {
         height: 33.3333333%;
     } 
 }
-.background {
-    background-image: url("images/background.png");
-}
-
 
 .button {
     padding-top: 10%;
