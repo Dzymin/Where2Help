@@ -5,3 +5,11 @@
     height: 500px;
     width: 500px;
 }
+
+.background {
+    background-image: url("../images/background.png");
+}
+
+html, body, .container-fluid, .row {
+    height: 100%;
+}

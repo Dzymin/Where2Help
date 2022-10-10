@@ -1,21 +1,26 @@
 @page "/main"
 
 <PageTitle>Main</PageTitle>
-<div class="container-fluid">
+<div class="container-fluid background">
     <div class="row">
-        <div class="col-sm-10 map-wrapper" style="padding:0">
-            <Map @ref="mapRef" MapOptions="@mapOptions"></Map>
+        <div id="one" class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div class="map-wrapper">
+                <Map @ref="mapRef" MapOptions="@mapOptions"></Map>
+            </div>
+            <div id="map-panel"></div>
         </div>
         <div class="panel col-sm-2">
-            My pins
         </div>
     </div>
 </div>
 
 <!--Dzia³a nie dotykaæ-->
 <style>
-    .map-wrapper, #mapId {
-        height: 100vh;
+    
+    #mapId {
+        height: 100%;
+        border-radius: 1rem;
     }
 </style>
 <!--Koniec-->
