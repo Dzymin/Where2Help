@@ -1,12 +1,12 @@
 ﻿#map-panel {
-    height: 30vh;
-    min-height:10rem;
+    height: 30%;
+    min-height: 10rem;
     width: 100%;
 }
 
 .map-wrapper {
     min-height: 20rem;
-    height: 70vh;
+    height: 70%;
     width: 100%;
     padding: 1rem;
 }
