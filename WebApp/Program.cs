@@ -13,6 +13,7 @@ namespace WebApp
             // Add services to the container.
             builder.Services.AddRazorPages();
             builder.Services.AddServerSideBlazor();
+            builder.Services.AddHttpClient();
 
             builder.Services.AddBlazorLeafletMaps(); // Blazor leaflet map line
 
