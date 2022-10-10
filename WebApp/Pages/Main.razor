@@ -1,0 +1,38 @@
+@page "/main"
+
+<PageTitle>Main</PageTitle>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-10 map-wrapper" style="padding:0">
+            <Map @ref="mapRef" MapOptions="@mapOptions"></Map>
+        </div>
+        <div class="panel col-sm-2">
+            My pins
+        </div>
+    </div>
+</div>
+
+<style>
+    .map-wrapper, #mapId {
+        height: 100vh;
+    }
+
+</style>
+
+@code {
+    private Map mapRef;
+    private MapOptions mapOptions = new MapOptions()
+        {
+            DivId = "mapId",
+            Center = new LatLng(52.12469880945258, 20.667213695109037),
+            Zoom = 15, //13
+            UrlTileLayer = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            SubOptions = new MapSubOptions()
+            {
+                Attribution = "&copy; <a lhref='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
+                TileSize = 512,
+                ZoomOffset = -1,//-1
+                MaxZoom = 17,
+            }
+        };
+}

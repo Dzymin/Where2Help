@@ -10,4 +10,8 @@
     <Folder Include="Data\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FisSst.BlazorMaps" Version="1.0.1" />
+  </ItemGroup>
+
 </Project>
