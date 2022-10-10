@@ -2,3 +2,7 @@
     background-image: url("../images/background.png");
     height: 100%;
 }
+
+.row {
+    height: 100%;
+}
