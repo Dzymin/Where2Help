@@ -56,7 +56,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:5275/api/location/1");
+        var request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:7275/api/location/1");
         request.Headers.Add("Accept", "application/json");
 
         var httpClient = ClientFactory.CreateClient();
