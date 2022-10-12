@@ -10,14 +10,6 @@
                 <Map @ref="mapRef" MapOptions="@mapOptions"></Map>
             </div>
             <div id="map-panel">
-                @if (getLocationsError)
-                {
-                    <p>Unable to render locations.</p>
-                }
-                else
-                {
-                    <p>@location.Name</p>
-                }
             </div>
         </div>
         <div class="panel col-sm-2">
@@ -51,8 +43,11 @@
             }
         };
 
+
     private bool getLocationsError = false;
     private LocationModel location = new LocationModel();
+    
+    private 
 
     protected override async Task OnInitializedAsync()
     {
@@ -71,5 +66,10 @@
         {
             getLocationsError = true;
         }
+    }
+
+    private void CreateMarkers() 
+    {
+
     }
 }
