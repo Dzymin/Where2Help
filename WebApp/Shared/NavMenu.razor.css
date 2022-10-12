@@ -1,0 +1,10 @@
+@media screen and ( min-width : 992px) {
+
+    .dropdown-menu-right {
+        position: absolute;
+        transform: translate3d(-82px, 0px, 0px);
+        top: 0px;
+        left: 0px;
+        will-change: transform;
+    }
+}
