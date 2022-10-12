@@ -17,6 +17,13 @@ namespace Backend.Data
             exampleLocation.Name = "Example";
             exampleLocation.Description = "Example location for testing";
 
+            Activity exampleActivity = new Activity();
+            exampleActivity.Id = 1;
+            exampleActivity.Name = "Example Activity";
+            exampleActivity.Description = "Lorem ipsum dolor sit amet. Et omnis dolor ab autem eligendi et voluptatem quae ut voluptates adipisci in quod accusamus.";
+
+            exampleLocation.Activities.Add(exampleActivity);
+
             _locations.Add(exampleLocation.Id, exampleLocation);
         }
 
