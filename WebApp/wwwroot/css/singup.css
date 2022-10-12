@@ -1,0 +1,10 @@
+.container-fluid-singup {
+    display:flex;
+    justify-content:center;
+}
+
+.SU-header {
+    background-color:red;
+    height:20px;
+    width:20px;
+}
