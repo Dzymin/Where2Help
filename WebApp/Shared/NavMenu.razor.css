@@ -8,3 +8,29 @@
         will-change: transform;
     }
 }
+
+.navbar {
+    background: #1c951c !important;
+}
+
+.navbar-nav .nav-link {
+    color: black;
+    transition: all 0.2s;
+}
+
+    .navbar-nav .nav-link:hover {
+        text-shadow: 0 1rem 0 #3aaa23;
+        transform: translateY(-1rem);
+        color: #023c00;
+    }
+
+.navbar-nav search-input {
+    background: transparent;
+    border: #035100 1px solid;
+    color: black;
+}
+
+    .navbar-nav search-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: red;
+        opacity: 1; /* Firefox */
+    }
