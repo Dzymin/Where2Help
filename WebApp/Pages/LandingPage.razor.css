@@ -2,9 +2,8 @@
     border: 1px solid black;
     min-height: 100vh;
 } 
-#two{
-    background-color: rgb(247, 247, 247);
-}
+
+
 @media (max-width: 767px) {
     .col-sm-4 {
     	min-height: 33.3333333%;
