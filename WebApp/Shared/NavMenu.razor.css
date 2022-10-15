@@ -18,11 +18,14 @@
     transition: all 0.2s;
 }
 
+.navbar-link .nav-item:hover {
+    cursor: pointer;
+}
+
     .navbar-nav .nav-item:hover .nav-link {
         text-shadow: 0 1rem 0 #3aaa23;
         transform: translateY(-1rem);
         color: #023c00;
-        cursor: pointer;
     }
 
 .navbar-nav search-input {
