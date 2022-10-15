@@ -1,4 +1,3 @@
-using FisSst.BlazorMaps.DependencyInjection;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
@@ -14,8 +13,6 @@ namespace WebApp
             builder.Services.AddRazorPages();
             builder.Services.AddServerSideBlazor();
             builder.Services.AddHttpClient();
-
-            builder.Services.AddBlazorLeafletMaps(); // Blazor leaflet map line
 
             var app = builder.Build();
 
