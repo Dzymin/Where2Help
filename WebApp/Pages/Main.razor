@@ -41,10 +41,6 @@
                 UrlTemplate = "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 Attribution = "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors"
             });
-
-            var marker = new Marker(51f, 21f);
-            marker.Tooltip = new Tooltip { Content = "Example marker!" };
-            map.AddLayer(marker);
         };
 
         var request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:7275/api/location/1");
@@ -62,5 +58,14 @@
         {
             getLocationsError = true;
         }
+
+        var marker = new Marker(location.Latitude, location.Longitude)
+        {
+            Tooltip = new Tooltip
+            {
+                Content = "Example marker"
+            }
+        };
+        map.AddLayer(marker);
     }
 }

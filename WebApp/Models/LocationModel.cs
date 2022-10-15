@@ -8,10 +8,10 @@ namespace WebApp.Models
         public long Id { get; set; }
         
         [JsonPropertyName("latitude")]
-        public double Latitude { get; set; }
+        public float Latitude { get; set; }
         
         [JsonPropertyName("longtitude")]
-        public double Longitude { get; set; }
+        public float Longitude { get; set; }
 
         [JsonPropertyName("name")]
         public string? Name { get; set; }
