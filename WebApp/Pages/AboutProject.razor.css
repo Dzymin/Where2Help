@@ -1,0 +1,31 @@
+﻿.article {
+    margin-inline: auto;
+    display: table;
+}
+
+.title {
+    font-size: 2rem;
+    text-align: center;
+    color: #1c951ce8;
+}
+
+.description {
+    font-size: 1rem;
+    font-weight: 100;
+}
+
+.made-by {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+    .made-by .id {
+    }
+
+    .id .name {
+        padding: 0.2rem 1rem;
+        font-size: 1rem;
+        border-bottom: 1px solid grey;
+    }
+
