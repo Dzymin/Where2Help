@@ -1,6 +1,7 @@
 ﻿.article {
     margin-inline: auto;
     display: table;
+    width: 70%;
 }
 
 .title {
@@ -10,8 +11,10 @@
 }
 
 .description {
+    margin-block: 1rem;
     font-size: 1rem;
     font-weight: 100;
+    text-indent: 6rem;
 }
 
 .made-by {
