@@ -1,11 +1,13 @@
 @page "/"
 
 @using BlazorLeaflet.Models;
+@using BlazorLeaflet.Models.Events
 @inject IHttpClientFactory ClientFactory
 @inject IJSRuntime jsRuntime
+@inject NavigationManager navManager
 
 <PageTitle>Main</PageTitle>
-<ModalWindow />
+
 <div class="container-fluid background">
     <div class="row">
         <div id="one" class="col-sm-2"></div>
@@ -27,11 +29,19 @@
     private bool getLocationsError = false;
     private LocationModel location = new LocationModel();
 
-    protected override async Task OnInitializedAsync()
+    private bool isModalWindowOpen = false;
+
+    protected override void OnInitialized()
     {
+        location.Id = 1;
+        location.Latitude = 52.1285461f;
+        location.Longitude = 20.6709578f;
+        location.Name = "Przyk³adowa lokacja";
+        location.Description = "Opis przyk³adowej lokacji";
+
         map = new Map(jsRuntime)
         {
-            Center = new LatLng(51f, 21f),
+            Center = new LatLng(52.1285461f, 20.6709578f),
             Zoom = 4.8f
         };
 
@@ -42,31 +52,20 @@
                 UrlTemplate = "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 Attribution = "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors"
             });
-        };
 
-        var request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:7275/api/location/1");
-        request.Headers.Add("Accept", "application/json");
+            var marker = new Marker(location.Latitude, location.Longitude)
+                {
+                    Tooltip = new Tooltip
+                    {
+                        Content = location.Name
+                    }
+                };
 
-        var httpClient = ClientFactory.CreateClient();
-        var response = await httpClient.SendAsync(request);
-
-        if (response.IsSuccessStatusCode)
-        {
-            using var responseStream = await response.Content.ReadAsStreamAsync();
-            location = await JsonSerializer.DeserializeAsync<LocationModel>(responseStream);
-        }
-        else
-        {
-            getLocationsError = true;
-        }
-
-        var marker = new Marker(location.Latitude, location.Longitude)
-        {
-            Tooltip = new Tooltip
+            marker.OnClick += (InteractiveLayer sender, MouseEvent e) =>
             {
-                Content = "Example marker"
-            }
+                navManager.NavigateTo("/modal");
+            };
+            map.AddLayer(marker);
         };
-        map.AddLayer(marker);
     }
 }

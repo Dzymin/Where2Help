@@ -1,4 +1,6 @@
-﻿<div class="blur modal-container">
+﻿@page "/modal"
+
+<div class="blur modal-container">
     <div class="content">
         <div class="about">
             <p class="name">Gruzownia</p>
@@ -7,20 +9,32 @@
         </div>
         <div class="offerts">
             <div class="offer">
-                <div class="offer-name"><span class="text">Dostarczenie gruzu</span><p class="offer-category">Potrzebne itemki</p></div>
-                <p class="offer-description">Dajta nam gruzu.</p>
+                <div class="offer-name"><span class="text">@activity1.Name</span><p class="offer-category">Potrzebna pomoc</p></div>
+                <p class="offer-description">@activity1.Description</p>
                 <a href="#" class="offer-read-more">Więcej ></a>
             </div>
             <div class="offer">
-                <div class="offer-name"><span class="text">Noszenie gruzu</span><p class="offer-category">Potrzebna pomoc</p></div>
-                <p class="offer-description">Potrzeba chętnych do przeniesienia gruzu.</p>
-                <a href="#" class="offer-read-more">Więcej ></a>
-            </div>
-            <div class="offer">
-                <div class="offer-name"><span class="text">Jeszcze wincyj gruzu</span><p class="offer-category">Potrzebne itemki</p></div>
-                <p class="offer-description">Potrzeba nam jeszcze WIĘCEJ gruzu.</p>
+                <div class="offer-name"><span class="text">@activity2.Name</span><p class="offer-category">Potrzebna pomoc</p></div>
+                <p class="offer-description">@activity2.Description</p>
                 <a href="#" class="offer-read-more">Więcej ></a>
             </div>
         </div>
     </div>
 </div>
+
+@code 
+{
+    ActivityModel activity1 = new ActivityModel();
+    ActivityModel activity2 = new ActivityModel();
+
+    protected override void OnInitialized()
+    {
+        activity1.Id = 1;
+        activity1.Name = "Przykładowa akcja";
+        activity1.Description = "Przykładowa akcja";
+
+        activity2.Id = 2;
+        activity2.Name = "Przykładowa akcja";
+        activity2.Description = "Przykładowa akcja";
+    }
+}
